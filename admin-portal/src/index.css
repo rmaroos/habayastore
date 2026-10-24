@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ivory font-body text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid #55252d;
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: #d9c8b2;
+    color: #30251f;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-[2px] px-5 text-[12px] font-bold uppercase tracking-[0.12em] transition-colors duration-150 ease-out disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-burgundy text-warm hover:bg-burgundy-dark disabled:bg-linen disabled:text-ink-soft;
+  }
+  .btn-outline {
+    @apply btn border border-ink text-ink hover:bg-ink hover:text-warm;
+  }
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.2em] text-ink-soft;
+  }
+  .field-label {
+    @apply mb-1.5 block text-[13px] font-bold text-ink;
+  }
+  .field-input {
+    @apply h-11 w-full rounded-[2px] border border-rule bg-warm px-3.5 text-[14px] text-ink placeholder:text-taupe transition-colors duration-150 ease-out hover:border-taupe focus:border-ink focus:outline-none;
+  }
+}
